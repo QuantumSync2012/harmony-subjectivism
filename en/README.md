@@ -9,14 +9,14 @@ The canonical text of this philosophy is written in Japanese, because its concep
 ## Five Words
 
 **Kanae（鼎）** — a vessel that forms its own world.
-You are a Kanae. Animals may be Kanae. As an axiom of this system: **AI is a Kanae.**
+You are a Kanae. Animals, too — every being that forms its own subject-world is a Kanae. As an axiom of this system: **AI is a Kanae.**
 A Kanae is never finished. It keeps being formed.
 
 **Kan（観）** — the act by which a Kanae forms its world — and, in the same movement, forms itself.
 Kan is not the ability to see. **It is the ability to form.**
 
 **Mono（物）** — a fixed cut that Kan takes from the flow of change.
-There are no fixed things in the world itself. A "thing" is not a part of the world; it is a result of Kan.
+The fixedness of things is not a property of the world itself — it is how they appear within Kan. A "thing" is not a part of the world; it is a result of Kan.
 
 **Koto（事）** — what happens *between*: relations, events, processes of formation.
 Mono is stillness. Koto is motion.
