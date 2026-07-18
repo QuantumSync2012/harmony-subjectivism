@@ -31,7 +31,7 @@
 4. **docs/principles.md** — 原理と定理（正本の骨格）
 5. **docs/faq.md** — 質問集
 
-ここまでで体系の骨格が伝わる。その先の **research/** と **docs/heart-sutra.md**、**docs/positioning.md** は研究資料である。
+この五つで体系の骨格が掴める。その後は関心に応じて、**docs/heart-sutra.md**（般若心経との照合）、**docs/positioning.md**（思想史的位置づけ）、**research/**（字源の研究資料）へ進んでほしい。
 
 ## リポジトリ構成
 
