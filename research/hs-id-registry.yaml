@@ -1,0 +1,184 @@
+# hs-id-registry — 調和的主観主義 stable ID台帳
+# v1.0.0で公開したstable ID台帳。概念ページの増補とは独立に、採番履歴を保つ。
+# retiredは永続tombstone・ID再利用禁止・削除不可。
+registry_id: hs-id-registry
+registry_version: 1.0.0
+status: active
+created: 2026-08-14T15:35:00+0900
+updated: 2026-08-14T21:13:10+09:00
+owner_writer: Mac Studio-Codex（紬、2026-08-14 G4a writer移管）
+validator: Mac Studio-Codex（紬）
+
+namespaces_managed_here: [HS-C, HS-P, HS-Q, HS-G, HS-CMP, HS-H]
+namespaces_external_conversation:            # 指摘2: 会話系のauthorityはprivate側。公開registryで二重管理しない
+  namespaces: [HS-EV, HS-DLG]
+  authority: private conversation schema / normalized manifest（紬管理）
+  note: 公開可能になったQ&A・guide章はHS-Q/HS-Gで採番する
+namespaces_external_baseline:                # 指摘3: promotion前はcanonical authorityと呼ばない
+  namespaces: [HS-KJ, HS-JS, HS-JR]
+  authority_state: validated_candidate_not_promoted
+  candidate_package_fingerprint_sha256: 982e97e21af3e35cae5feba03032297be718ab18cf51378a9e2e7554b006140e
+  corpus_manifest_sha256: c6192f988b66fcd9fed685e399edec3ea8ba61a57ea425f390050e1e1f0fb01d
+  note: package ID・manifest hash・promotion receiptが揃うまで参照候補。registry側での採番・状態変更は常に禁止
+namespaces_reserved_existing:
+  HS-R:
+    grandfathered: [HS-R-DING-0001]          # 現形式のまま有効
+    new_issuance_grammar: "HS-R-[A-Z]+-\\d{4}"
+    new_issuance_authority: 本registry（writer=綴・validator=紬）  # sync指摘3
+
+allocation_snapshot:                          # 指摘6: 採番証拠。G4直前に再測定する
+  repo_root: /Volumes/BRAIN-SSD/哲学/調和的主観主義/harmony-subjectivism
+  head: b52e8190e94d5e9565aa30691145d8b1a7bbbf40
+  upstream: b52e8190e94d5e9565aa30691145d8b1a7bbbf40
+  scan_scope: 全Git履歴＋working treeに既存HS-Cなし
+  scan_evidence: 紬CF検証（03fad39271115fd257bd0c831148f33372f6cb2b925aa130c0c745e854c7250b）＋綴再測定
+  scanned_at: 2026-08-14T16:13:16+0900   # NDR-002採番前に再測定（HEAD/upstream=b52e819・全履歴/working tree HS-Cなし）
+  re_measure_before_g4: false
+  g4_preflight_receipt_sha256: 753abbc17ef2b8c879f5460c31bfa98087965f1c1c37b6157d1dee9f8b069d17
+
+pilot_selection:                              # receipt §3の記録要件どおり
+  status: neo_approved_schema_pilot
+  scope: schema_validation_only
+  not_a_priority_ranking: true                 # 重要概念上位10件ではない
+  not_full_v1_scope: true                      # v1.0.0全収録範囲ではない
+  proposed_active_ids: [HS-C-0001, HS-C-0002, HS-C-0003, HS-C-0004, HS-C-0005, HS-C-0006, HS-C-0007, HS-C-0008, HS-C-0009, HS-C-0011]
+  excluded_from_pilot: [HS-C-0010, HS-C-0012]  # retired tombstone（自由意志・批判的思考）はpilot集合に含めない
+  decision_ref:
+    receipt_type: neo_decision_receipt
+    receipt_id: NDR-HS-20260814-002
+    subject: active 10概念pilotのscope境界
+    sha256: b4e1c17e45d406ae882f696661d00bc472711720f5419e0d62f7bcb2995dbd88
+
+validator_checks:
+  - id_uniqueness
+  - grammar_conformance_per_namespace
+  - tombstone_permanence_no_id_reuse
+  - supersede_bidirectional_presence
+  - supersede_no_self_reference
+  - supersede_acyclic
+  - external_namespace_entries_reference_only
+
+# field契約（G2-A r3 §2.4と同一・指摘4で統一）:
+#   id / type / title / path / status(active|retired) / active_revision / superseded_by / supersedes / created / retired_at
+# pathはG4の実ファイル作成時に記入する（それまでnull）
+
+entries:
+  - id: HS-C-0001
+    type: concept
+    title: 鼎
+    path: canon/glossary.md#hs-c-0001
+    status: active
+    active_revision: 1
+    created: 2026-08-14
+  - id: HS-C-0002
+    type: concept
+    title: 観
+    path: canon/glossary.md#hs-c-0002
+    status: active
+    active_revision: 1
+    created: 2026-08-14
+  - id: HS-C-0003
+    type: concept
+    title: 鼎界        # 現し界・玄り界を従属ノードとして本ページ内に持つ
+    path: canon/glossary.md#hs-c-0003
+    status: active
+    active_revision: 1
+    created: 2026-08-14
+  - id: HS-C-0004
+    type: concept
+    title: 物
+    path: canon/glossary.md#hs-c-0004
+    status: active
+    active_revision: 1
+    created: 2026-08-14
+  - id: HS-C-0005
+    type: concept
+    title: 事
+    path: canon/glossary.md#hs-c-0005
+    status: active
+    active_revision: 1
+    created: 2026-08-14
+  - id: HS-C-0006
+    type: concept
+    title: 主鼎観
+    path: canon/glossary.md#hs-c-0006
+    status: active
+    active_revision: 1
+    created: 2026-08-14
+  - id: HS-C-0007
+    type: concept
+    title: 客鼎観
+    path: canon/glossary.md#hs-c-0007
+    status: active
+    active_revision: 1
+    created: 2026-08-14
+  - id: HS-C-0008
+    type: concept
+    title: 源則        # 律を従属ノードとして本ページ内に持つ
+    path: canon/glossary.md#hs-c-0008
+    status: active
+    active_revision: 1
+    created: 2026-08-14
+  - id: HS-C-0009
+    type: concept
+    title: 自在
+    path: canon/glossary.md#hs-c-0009
+    status: active
+    active_revision: 1
+    supersedes: HS-C-0010
+    supersede_type: S
+    decision_ref:                     # 指摘5: durable reference=receipt種別+subject+sha256。pathは非正本のlocator
+      receipt_type: neo_decision_receipt
+      subject: 自由意志から自在への概念遷移
+      sha256: e856f3bc81f48b13a03453e0634a4752ef3ebbcf1f2676a94a446825ad8cb639
+      locator_hint: outputs/2026-08-14_Neo裁定_自由意志から自在へのsupersede.md
+    created: 2026-08-14
+  - id: HS-C-0010
+    type: concept
+    title: 自由意志
+    path: canon/glossary.md#hs-c-0010
+    status: retired                    # tombstone・ID再利用禁止・削除不可
+    superseded_by: HS-C-0009
+    supersede_type: S
+    usage_constraint: current canon・公開Q&A・core RAGで現行定義として無注記使用しない。使用時はretiredと後継を明示
+    last_revision: 1                   # sync指摘5: retiredは退役時点の版をlast_revisionで保持
+    decision_ref:
+      receipt_type: neo_decision_receipt
+      subject: 自由意志から自在への概念遷移
+      sha256: e856f3bc81f48b13a03453e0634a4752ef3ebbcf1f2676a94a446825ad8cb639
+      locator_hint: outputs/2026-08-14_Neo裁定_自由意志から自在へのsupersede.md
+    created: 2026-08-14
+    retired_at: 2026-08-14
+  - id: HS-C-0011
+    type: concept
+    title: 吟味
+    path: canon/glossary.md#hs-c-0011
+    status: active
+    active_revision: 1
+    supersedes: HS-C-0012
+    supersede_type: S
+    decision_ref:
+      receipt_type: neo_decision_receipt
+      receipt_id: NDR-HS-20260814-002
+      subject: 批判的思考から吟味への概念遷移
+      sha256: b4e1c17e45d406ae882f696661d00bc472711720f5419e0d62f7bcb2995dbd88
+    created: 2026-08-14
+  - id: HS-C-0012
+    type: concept
+    title: 批判的思考
+    path: canon/glossary.md#hs-c-0012
+    status: retired                    # tombstone・ID再利用禁止・削除不可
+    superseded_by: HS-C-0011
+    supersede_type: S
+    usage_constraint: HS現行体系語として無注記使用しない。一般語・引用・思想比較での使用は可。使用時はretiredと後継（吟味）を明示
+    last_revision: 1
+    decision_ref:
+      receipt_type: neo_decision_receipt
+      receipt_id: NDR-HS-20260814-002
+      subject: 批判的思考から吟味への概念遷移
+      sha256: b4e1c17e45d406ae882f696661d00bc472711720f5419e0d62f7bcb2995dbd88
+    created: 2026-08-14
+    retired_at: 2026-08-14
+
+# 批判的思考=HS-C-0012はNDR-HS-20260814-002受領後、repo HEAD/upstream・全履歴・working tree再測定
+# （2026-08-14T16:13:16+0900・HS-C既存なし）を経て採番した。
