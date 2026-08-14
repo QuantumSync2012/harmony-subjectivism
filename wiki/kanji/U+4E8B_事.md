@@ -4,8 +4,6 @@ character: "事"
 codepoint: "U+4E8B"
 page_role: wiki_kanji
 canon_status: current_core
-evidence_status: validated_candidate_not_promoted
-evidence_ref: "HS-KJ-U+4E8B"
 public_raw_transcription: forbidden
 ---
 
@@ -44,7 +42,6 @@ public_raw_transcription: forbidden
 
 - **体系内claim**：事は関係そのものであり、不可視の心的内容だけに限定しない。
 - **公開研究claim**：漢字相関マップは、吹き流しを立てた外祭から事へ展開するという白川説を資料別claimとして紹介する。同じ祭祀場面との照応は【象徴的読解】で、定義の証明ではない。
-- **非公開の調査記録**：非公開の調査記録には転写レコードがある。ただし候補記録は正本でも公開用字源claimでもなく、原文公開の許可を与えない。
 - **公開境界**：辞書の生転写・長い逐語引用は掲載しない。出典を分けた短い要約と、異説・未確認箇所だけを公開する。
 
 ## 関連FAQ・概念

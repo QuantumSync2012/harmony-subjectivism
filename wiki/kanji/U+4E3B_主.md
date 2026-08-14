@@ -4,8 +4,6 @@ character: "主"
 codepoint: "U+4E3B"
 page_role: wiki_kanji
 canon_status: current_core
-evidence_status: validated_candidate_not_promoted
-evidence_ref: "HS-KJ-U+4E3B"
 public_raw_transcription: forbidden
 ---
 
@@ -44,7 +42,6 @@ public_raw_transcription: forbidden
 
 - **体系内claim**：上記の説明は、公開正本にある定義・関係を一字からたどり直したものである。
 - **公開研究claim**：漢字相関マップは、主を廟の火を執る中心とする白川説を資料別claimとして紹介する。正本の「鐙中の火主」という読みも【象徴的読解】であり、体系のあるじ概念を歴史的字源だけから導いた証明ではない。
-- **非公開の調査記録**：非公開の調査記録には転写レコードがある。ただし候補記録は正本でも公開用字源claimでもなく、原文公開の許可を与えない。
 - **公開境界**：辞書の生転写・長い逐語引用は掲載しない。公開するのは、出典を分けた短い要約、体系内用法、異説や未確認箇所の表示だけである。
 
 ## 関連FAQ・概念

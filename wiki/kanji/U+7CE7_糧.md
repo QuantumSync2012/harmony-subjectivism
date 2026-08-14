@@ -4,8 +4,6 @@ character: "糧"
 codepoint: "U+7CE7"
 page_role: wiki_kanji
 canon_status: current_core
-evidence_status: validated_candidate_not_promoted
-evidence_ref: "HS-KJ-U+7CE7"
 public_raw_transcription: forbidden
 ---
 
@@ -44,7 +42,6 @@ public_raw_transcription: forbidden
 
 - **体系内claim**：糧は然が燃やすものとして定義され、身体的充足と観の授受を含む。
 - **公開研究claim**：正本の「行道を糧と曰ふ」から道行きのかてを読む説明は【象徴的読解】である。辞書転写の熟語列を公開ページへ複製しない。
-- **非公開の調査記録**：非公開の調査記録には転写レコードがある。ただし候補記録は正本でも公開用字源claimでもなく、原文公開の許可を与えない。
 - **公開境界**：辞書の生転写・長い逐語引用は掲載しない。出典を分けた短い要約と、異説・未確認箇所だけを公開する。
 
 ## 関連FAQ・概念

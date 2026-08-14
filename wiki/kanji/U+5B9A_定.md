@@ -4,8 +4,6 @@ character: "定"
 codepoint: "U+5B9A"
 page_role: wiki_kanji
 canon_status: unresolved
-evidence_status: validated_candidate_not_promoted
-evidence_ref: "HS-KJ-U+5B9A"
 public_raw_transcription: forbidden
 ---
 
@@ -43,8 +41,7 @@ public_raw_transcription: forbidden
 ## 資料別claimと境界
 
 - **体系内claim**：定は現在、複数の熟語を構成する字であり、一字の独立定義は未決である。
-- **公開研究claim**：公開研究層には、この字の独立した資料別claimをまだ置かない。非公開の調査記録の存在だけで安定・固定等の一義へ絞らない。
-- **非公開の調査記録**：非公開の調査記録には転写レコードがある。ただし候補記録は正本でも公開用字源claimでもなく、原文公開の許可を与えない。
+- **公開研究claim**：公開研究層には、この字の独立した資料別claimをまだ置かない。
 - **公開境界**：辞書の生転写・長い逐語引用は掲載しない。出典を分けた短い要約と、異説・未確認箇所だけを公開する。
 
 ## 関連FAQ・概念

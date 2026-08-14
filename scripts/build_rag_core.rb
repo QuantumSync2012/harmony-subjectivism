@@ -9,7 +9,7 @@ require "rbconfig"
 
 ROOT = Pathname.new(File.expand_path("..", __dir__))
 OUTPUT = ROOT.join("generated/rag/core")
-PACK_VERSION = "1.1.0"
+PACK_VERSION = "1.1.1"
 
 EXACT_SOURCES = %w[
   README.md

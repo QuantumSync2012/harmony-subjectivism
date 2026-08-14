@@ -4,8 +4,6 @@ character: "質"
 codepoint: "U+8CEA"
 page_role: wiki_kanji
 canon_status: current_core
-evidence_status: validated_candidate_not_promoted
-evidence_ref: "HS-KJ-U+8CEA"
 public_raw_transcription: forbidden
 ---
 
@@ -44,7 +42,6 @@ public_raw_transcription: forbidden
 
 - **体系内claim**：質は物質の体系内定義を支える担保であり、歴史的原義そのものとは断定しない。
 - **公開研究claim**：正本は質・贄・贅の字義材料から体系内定義を構成したと明示する。この構成は【象徴的読解】を含み、辞書学上の唯一説ではない。
-- **非公開の調査記録**：非公開の調査記録には転写レコードがある。ただし候補記録は正本でも公開用字源claimでもなく、原文公開の許可を与えない。
 - **公開境界**：辞書の生転写・長い逐語引用は掲載しない。出典を分けた短い要約と、異説・未確認箇所だけを公開する。
 
 ## 関連FAQ・概念

@@ -4,8 +4,6 @@ character: "伝"
 codepoint: "U+4F1D"
 page_role: wiki_kanji
 canon_status: current_supporting
-evidence_status: validated_candidate_not_promoted
-evidence_ref: "HS-KJ-U+4F1D"
 public_raw_transcription: forbidden
 ---
 
@@ -43,8 +41,7 @@ public_raw_transcription: forbidden
 ## 資料別claimと境界
 
 - **体系内claim**：上記の説明は、公開正本にある定義・関係を一字からたどり直したものである。
-- **公開研究claim**：非公開記録には伝の資料があるが、通信・教育・宗教伝道の全歴史を一字でまとめない。確定している伝灯と伝道の定義を中心にする。
-- **非公開の調査記録**：非公開の調査記録には転写レコードがある。ただしこの記録は正本でも公開用の字源claimでもなく、原文公開の許可を与えない。
+- **公開研究claim**：確定している伝灯と伝道の定義を中心にする。
 - **公開境界**：辞書の生転写・長い逐語引用は掲載しない。公開するのは、出典を分けた短い要約、体系内用法、異説や未確認箇所の表示だけである。
 
 ## 関連FAQ・概念

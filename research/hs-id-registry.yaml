@@ -1,11 +1,11 @@
 # hs-id-registry — 調和的主観主義 stable ID台帳
-# v1.0.0で公開し、v1.1.0で公開衛生を整えたstable ID台帳。概念ページの増補とは独立に、採番履歴を保つ。
+# v1.0.0で公開し、v1.1.1で漢字調査の内部工程状態を公開台帳から分離したstable ID台帳。概念ページの増補とは独立に、採番履歴を保つ。
 # retiredは永続tombstone・ID再利用禁止・削除不可。
 registry_id: hs-id-registry
-registry_version: 1.1.0
+registry_version: 1.1.1
 status: active
 created: 2026-08-14T15:35:00+0900
-updated: 2026-08-14T23:19:32+09:00
+updated: 2026-08-15T00:52:41+09:00
 owner_writer: repository maintainer
 validator: scripts/validate_structure.rb
 
@@ -14,12 +14,6 @@ namespaces_external_conversation:
   namespaces: [HS-EV, HS-DLG]
   authority: private evidence registry (not published)
   note: 公開可能になったQ&A・guide章はHS-Q/HS-Gで採番する
-namespaces_external_baseline:
-  namespaces: [HS-KJ, HS-JS, HS-JR]
-  authority_state: validated_candidate_not_promoted
-  candidate_package_fingerprint_sha256: 982e97e21af3e35cae5feba03032297be718ab18cf51378a9e2e7554b006140e
-  corpus_manifest_sha256: c6192f988b66fcd9fed685e399edec3ea8ba61a57ea425f390050e1e1f0fb01d
-  note: package ID・manifest hash・promotion receiptが揃うまで参照候補。registry側での採番・状態変更は常に禁止
 namespaces_reserved_existing:
   HS-R:
     grandfathered: [HS-R-DING-0001]          # 現形式のまま有効
@@ -46,7 +40,6 @@ validator_checks:
   - supersede_bidirectional_presence
   - supersede_no_self_reference
   - supersede_acyclic
-  - external_namespace_entries_reference_only
 
 # field契約:
 #   id / type / title / path / status(active|retired) / active_revision / superseded_by / supersedes / created / retired_at

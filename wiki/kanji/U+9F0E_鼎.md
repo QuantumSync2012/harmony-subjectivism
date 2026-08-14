@@ -4,8 +4,6 @@ character: "鼎"
 codepoint: "U+9F0E"
 page_role: wiki_kanji
 canon_status: current_core
-evidence_status: validated_candidate_not_promoted
-evidence_ref: "HS-KJ-U+9F0E"
 public_raw_transcription: forbidden
 ---
 
@@ -53,7 +51,6 @@ public_raw_transcription: forbidden
 - **体系内claim**：鼎は観と鼎界を成立させる器で、人・物・體・鼎界のいずれとも単純同一ではない。
 - **公開研究claim**：[漢字相関マップ](../../research/kanji-map.md)は、白川説における主・客・観・事・鼎の祭祀的布置を資料別claimとして紹介する。[多層用法研究](../../research/kanji/ding/dingming-preqin-han.md)は、古文字の器形、円鼎の三足と方鼎の四足、食器・祭器、王権・身分秩序、鼎銘・刑鼎を、古典・出土器・博物館資料・公開字庫に分けて検証している。
 - **象徴的読解**：「目＝観の座」という分解は歴史的字源ではなく筆者のメタファーである。三足、鼎立、鼎談、鼎銘との接続も、体系の正しさを証明する字源claimではない。
-- **非公開の調査記録**：非公開の調査記録には転写レコードがある。ただし候補記録は正本でも公開用字源claimでもなく、原文公開の許可を与えない。
 - **公開境界**：辞書の生転写・長い逐語引用は掲載しない。出典を分けた短い要約と、異説・未確認箇所だけを公開する。
 
 ## 関連FAQ・概念

@@ -4,8 +4,6 @@ character: "現"
 codepoint: "U+73FE"
 page_role: wiki_kanji
 canon_status: current_core
-evidence_status: validated_candidate_not_promoted
-evidence_ref: "HS-KJ-U+73FE"
 public_raw_transcription: forbidden
 ---
 
@@ -45,8 +43,7 @@ public_raw_transcription: forbidden
 ## 資料別claimと境界
 
 - **体系内claim**：現は観との関係を表し、可視／不可視の単純な物理区分にはしない。
-- **公開研究claim**：現行の漢字相関マップには、現一字の専用の公開字源claimはまだない。冒頭の一般義と非公開の調査記録の候補説を、漢字相関マップに既に整備済みの公開claimであるかのように示さない。専用claimは公開出典の資料別照合後に別途整備する。
-- **非公開の調査記録**：非公開の調査記録には転写レコードがある。ただし候補記録は正本でも公開用の字源claimでもなく、原文の公開許可を与えない。
+- **公開研究claim**：現行の漢字相関マップには、現一字の専用の公開字源claimはまだない。専用claimは公開出典の資料別照合後に別途整備する。
 - **公開境界**：辞書の生転写・長い逐語引用は掲載しない。公開するのは、出典を分けた短い要約、体系内用法、異説や未確認箇所の表示だけである。
 
 ## 関連FAQ・概念

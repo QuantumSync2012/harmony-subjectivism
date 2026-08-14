@@ -4,8 +4,6 @@ character: "調"
 codepoint: "U+8ABF"
 page_role: wiki_kanji
 canon_status: current_supporting
-evidence_status: validated_candidate_not_promoted
-evidence_ref: "HS-KJ-U+8ABF"
 public_raw_transcription: forbidden
 ---
 
@@ -43,7 +41,6 @@ public_raw_transcription: forbidden
 
 - **体系内claim**：上記の説明は、公開正本にある定義・関係を一字からたどり直したものである。
 - **公開研究claim**：漢字相関マップは、調を楽音の整いに結ぶ白川説を資料別claimとして示す。音の照応は【象徴的読解】であり、調和を音楽的均一や心地よさだけへ狭めない。
-- **非公開の調査記録**：非公開の調査記録には転写レコードがある。ただし候補記録は正本でも公開用字源claimでもなく、原文公開の許可を与えない。
 - **公開境界**：辞書の生転写・長い逐語引用は掲載しない。公開するのは、出典を分けた短い要約、体系内用法、異説や未確認箇所の表示だけである。
 
 ## 関連FAQ・概念

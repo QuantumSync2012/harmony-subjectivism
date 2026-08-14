@@ -4,8 +4,6 @@ character: "保"
 codepoint: "U+4FDD"
 page_role: wiki_kanji
 canon_status: current_supporting
-evidence_status: validated_candidate_not_promoted
-evidence_ref: "HS-KJ-U+4FDD"
 public_raw_transcription: forbidden
 ---
 
@@ -43,8 +41,7 @@ public_raw_transcription: forbidden
 ## 資料別claimと境界
 
 - **体系内claim**：上記の説明は、公開正本にある定義・関係を一字からたどり直したものである。
-- **公開研究claim**：非公開の調査記録候補はあるが、公開正本に保一字の独立した字源定義はない。依・保・褓を衣の家族とする説明は資料別claimであり、體の定義の証明にはしない。
-- **非公開の調査記録**：非公開の調査記録には転写レコードがある。ただし候補記録は正本でも公開用字源claimでもなく、原文公開の許可を与えない。
+- **公開研究claim**：依・保・褓を衣の家族とする説明は資料別claimであり、體の定義の証明にはしない。
 - **公開境界**：辞書の生転写・長い逐語引用は掲載しない。公開するのは、出典を分けた短い要約、体系内用法、異説や未確認箇所の表示だけである。
 
 ## 関連FAQ・概念
