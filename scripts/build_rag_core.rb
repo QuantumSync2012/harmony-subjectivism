@@ -5,10 +5,11 @@ require "digest"
 require "fileutils"
 require "json"
 require "pathname"
+require "rbconfig"
 
 ROOT = Pathname.new(File.expand_path("..", __dir__))
 OUTPUT = ROOT.join("generated/rag/core")
-PACK_VERSION = "1.0.0"
+PACK_VERSION = "1.1.0"
 
 EXACT_SOURCES = %w[
   README.md
@@ -106,6 +107,11 @@ def validate_source!(relative, text)
   if text.include?("public_raw_dialogue: true")
     raise "raw dialogue marked public in #{relative}"
   end
+end
+
+sync_check = ROOT.join("scripts/sync_definition_quotes.rb")
+unless system(RbConfig.ruby, sync_check.to_s, "--check", chdir: ROOT.to_s)
+  abort "FAIL: canonical definition quote check failed; core RAG was not rebuilt"
 end
 
 FileUtils.mkdir_p(OUTPUT)

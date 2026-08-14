@@ -9,8 +9,8 @@ status: published
 
 定義の正本: [canon/glossary.md](../../canon/glossary.md#hs-c-0005)
 
-<!-- HS-DEF-QUOTE:BEGIN id=HS-C-0005 revision=1 source=canon/glossary.md -->
-> **定義**: 鼎同士、物同士、あるいはその関係によって生じる変化・出来事・形成過程。
+<!-- HS-DEF-QUOTE:BEGIN id=HS-C-0005 revision=2 source=canon/glossary.md -->
+> **定義**: 物と物、物と鼎、鼎と鼎の間に生じる関係・変化・出来事・形成過程。
 <!-- HS-DEF-QUOTE:END -->
 
 ## 導入——「こと」と言うとき、何を指しているのか

@@ -5,6 +5,7 @@ require "pathname"
 require "set"
 require "uri"
 require "yaml"
+require_relative "lib/concept_quote_gate"
 
 ROOT = Pathname.new(__dir__).parent.expand_path
 REGISTRY = ROOT.join("research/hs-id-registry.yaml")
@@ -22,6 +23,9 @@ STUBS = {
 }.freeze
 
 errors = []
+unless ConceptQuoteGate.run(write: false, quiet: true).zero?
+  errors << "concept definition quote gate failed (run scripts/sync_definition_quotes.rb --check for details)"
+end
 registry = YAML.load_file(REGISTRY)
 entries = registry.fetch("entries")
 by_id = entries.each_with_object({}) do |entry, memo|

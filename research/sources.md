@@ -1,10 +1,11 @@
-# Sources / 参考文献 — v1.0.0
+# Sources / 参考文献 — v1.1.0
 
 ## 字源辞典（資料別に扱う）
 
 - 白川静『常用字解』平凡社
 - 白川静『字通』平凡社 — 本体系の主たる辞書的出発点。考古学的一次資料（甲骨・金文そのもの）ではない
 - 白川静『字統』平凡社
+- 許慎『説文解字』— 字源異説を資料別に帰属させる際の古典字書
 
 ## 公開学術データベース（2026-08-14参照）
 
@@ -15,6 +16,12 @@
 
 ### 一次資料
 
+- 西田幾多郎『善の研究』弘道館、1911年
+- 西田幾多郎「場所」『哲学研究』第123号、1926年
+- Immanuel Kant, *Kritik der reinen Vernunft*（1781／第2版1787）— 現象、物自体、可能な経験の条件の比較に使用
+- G. W. F. Hegel, *Phänomenologie des Geistes*（1807）／*Wissenschaft der Logik*（1812–1816）— 否定・媒介・止揚の比較に使用
+- William James, “Does ‘Consciousness’ Exist?”（1904）／“A World of Pure Experience”（1904）、のち *Essays in Radical Empiricism*（1912）所収 — ジェイムズ型中立一元論の比較に使用
+- Bertrand Russell, *The Analysis of Mind*（1921）— ラッセル型中立一元論の比較に使用
 - Thomas Nagel, "What Is It Like to Be a Bat?", The Philosophical Review 83(4), 1974
 - Jakob von Uexküll, *A Foray into the Worlds of Animals and Humans*（1934年原著の英訳、2010）
 - Audrey Tang, E. Glen Weyl & Plurality Community, *Plurality: The Future of Collaborative Technology and Democracy* — https://plurality.net/ （2026年8月14日参照）
