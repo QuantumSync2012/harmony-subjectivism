@@ -1,11 +1,12 @@
 # hs-id-registry — 調和的主観主義 stable ID台帳
 # v1.0.0で公開し、v1.1.1で漢字調査の内部工程状態を公開台帳から分離したstable ID台帳。概念ページの増補とは独立に、採番履歴を保つ。
+# v1.2.0で客鼎観・源則・自在・吟味の定義改訂に伴いactive_revisionを更新。
 # retiredは永続tombstone・ID再利用禁止・削除不可。
 registry_id: hs-id-registry
-registry_version: 1.1.1
+registry_version: 1.2.0
 status: active
 created: 2026-08-14T15:35:00+0900
-updated: 2026-08-15T00:52:41+09:00
+updated: 2026-08-22T07:30:55+0900
 owner_writer: repository maintainer
 validator: scripts/validate_structure.rb
 
@@ -93,21 +94,21 @@ entries:
     title: 客鼎観
     path: canon/glossary.md#hs-c-0007
     status: active
-    active_revision: 1
+    active_revision: 2
     created: 2026-08-14
   - id: HS-C-0008
     type: concept
     title: 源則        # 律を従属ノードとして本ページ内に持つ
     path: canon/glossary.md#hs-c-0008
     status: active
-    active_revision: 1
+    active_revision: 2
     created: 2026-08-14
   - id: HS-C-0009
     type: concept
     title: 自在
     path: canon/glossary.md#hs-c-0009
     status: active
-    active_revision: 1
+    active_revision: 2
     supersedes: HS-C-0010
     supersede_type: S
     decision_ref:
@@ -135,7 +136,7 @@ entries:
     title: 吟味
     path: canon/glossary.md#hs-c-0011
     status: active
-    active_revision: 1
+    active_revision: 2
     supersedes: HS-C-0012
     supersede_type: S
     decision_ref:

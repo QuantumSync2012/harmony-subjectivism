@@ -9,7 +9,7 @@ require "rbconfig"
 
 ROOT = Pathname.new(File.expand_path("..", __dir__))
 OUTPUT = ROOT.join("generated/rag/core")
-PACK_VERSION = "1.1.1"
+PACK_VERSION = "1.2.0"
 
 EXACT_SOURCES = %w[
   README.md
@@ -81,7 +81,7 @@ def strip_frontmatter(text)
   text.sub(/\A---\n.*?\n---\n/m, "")
 end
 
-RETIRED_LEDGER_PATTERN = /\n(## 三、不採用・廃語台帳\n.*?)\n---\n\n(?=## 四、)/m
+RETIRED_LEDGER_PATTERN = /\n(## 三、不採用・廃語台帳\n.*?)(?=\n## |\z)/m
 
 def prepare_for_rag(relative, text)
   prepared = strip_frontmatter(text)

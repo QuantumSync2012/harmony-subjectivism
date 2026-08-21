@@ -24,7 +24,7 @@ actual = Dir.glob(CORE.join("*.md")).map do |path|
 end.sort
 
 errors << "manifest/file set mismatch" unless declared == actual
-errors << "pack version must be 1.1.1" unless manifest["pack_version"] == "1.1.1"
+errors << "pack version must be 1.2.0" unless manifest["pack_version"] == "1.2.0"
 
 entries.each do |entry|
   file = ROOT.join(entry.fetch("file"))

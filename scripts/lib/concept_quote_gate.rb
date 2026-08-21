@@ -28,7 +28,7 @@ module ConceptQuoteGate
       {
         source: "canon/principles.md",
         heading: "### 第二原理 観（Kan）【定義】",
-        excerpt: "観は**受・想・行・識**の四位相を持つ——受（受けとる）・想（かたちを結ぶ）・行（形成へ向かう）・識（識る）。"
+        excerpt: "観は**受・想・行・識**の四位相を持つ——受（受け取る）・想（切り取る）・行（向かう）・識（識る）。"
       },
       { source: "canon/glossary.md", heading: "#### 行の変換（こうのへんかん）【定義】", source_prefix: "**定義**:" }
     ],
@@ -49,9 +49,9 @@ module ConceptQuoteGate
       {
         source: "canon/principles.md",
         heading: "### 第二原理 観（Kan）【定義】",
-        excerpt: "観は**受・想・行・識**の四位相を持つ——受（受けとる）・想（かたちを結ぶ）・行（形成へ向かう）・識（識る）。"
+        excerpt: "観は**受・想・行・識**の四位相を持つ——受（受け取る）・想（切り取る）・行（向かう）・識（識る）。"
       },
-      { source: "canon/glossary.md", heading: "#### 受の能動性【定義】", source_prefix: "**定義**:" }
+      { source: "canon/glossary.md", heading: "#### 受（じゅ）【定義】", source_prefix: "**定義**:" }
     ],
     "wiki/concepts/kakurikai.md" => [
       { source: "canon/glossary.md", heading: "#### 玄り界（かくりかい）【定義】", source_prefix: "**定義**:" }
@@ -91,7 +91,7 @@ module ConceptQuoteGate
       {
         source: "canon/principles.md",
         heading: "### 第二原理 観（Kan）【定義】",
-        excerpt: "観は**受・想・行・識**の四位相を持つ——受（受けとる）・想（かたちを結ぶ）・行（形成へ向かう）・識（識る）。"
+        excerpt: "観は**受・想・行・識**の四位相を持つ——受（受け取る）・想（切り取る）・行（向かう）・識（識る）。"
       }
     ],
     "wiki/concepts/shin.md" => [
@@ -101,7 +101,7 @@ module ConceptQuoteGate
       {
         source: "canon/principles.md",
         heading: "### 第二原理 観（Kan）【定義】",
-        excerpt: "観は**受・想・行・識**の四位相を持つ——受（受けとる）・想（かたちを結ぶ）・行（形成へ向かう）・識（識る）。"
+        excerpt: "観は**受・想・行・識**の四位相を持つ——受（受け取る）・想（切り取る）・行（向かう）・識（識る）。"
       }
     ],
     "wiki/concepts/sokutei.md" => [
@@ -120,13 +120,12 @@ module ConceptQuoteGate
     "wiki/concepts/tamashii.md" => [
       {
         source: "canon/glossary.md",
-        heading: "#### 魂と呼ばれてきたもの【解釈】",
-        source_prefix: "**位置づけ**:",
-        remove: "（→三、不採用・廃語台帳）"
+        heading: "#### 魂（たましい）【解釈】",
+        source_prefix: "**位置づけ**:"
       }
     ],
     "wiki/concepts/teigo.md" => [
-      { source: "canon/glossary.md", heading: "#### 鼎合（ていごう）【系】（2026-08-14 筆者による最終宣言）", source_prefix: "**定義**:" }
+      { source: "canon/glossary.md", heading: "#### 鼎合（ていごう）【系】", source_prefix: "**定義**:" }
     ],
     "wiki/concepts/teiritsu.md" => [
       { source: "canon/glossary.md", heading: "#### 鼎立（ていりつ）【定義】", source_prefix: "**定義**:" }
