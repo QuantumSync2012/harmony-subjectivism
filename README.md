@@ -61,6 +61,7 @@
 | [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) | 検証課題と未解決の論点（解決の記録と、開いた問いとに分割して管理） |
 | [guide/why-needed.md](guide/why-needed.md) | なぜこの体系が必要なのかを、問いと応答で展開する導入章 |
 | [guide/ten-articles.md](guide/ten-articles.md) | 十箇条（普及版） |
+| [guide/writing-guidelines.md](guide/writing-guidelines.md) | 執筆ガイドライン（G1-G29。全公開文書の執筆と修正に適用） |
 | [canon/glossary.md](canon/glossary.md) | 用語集（全概念の定義・日英併記。方法論と廃語台帳は本ファイルの節として収録） |
 | [canon/principles.md](canon/principles.md) | 中心命題・最小定義・公理・主要定理・倫理的帰結・未決課題と、付録の詳細骨格（確度ラベル付き） |
 | [wiki/faq.md](wiki/faq.md) | 読者向け：分かりにくい論点の質問集 |
