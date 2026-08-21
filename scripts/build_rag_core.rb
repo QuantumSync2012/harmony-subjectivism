@@ -81,14 +81,49 @@ def strip_frontmatter(text)
   text.sub(/\A---\n.*?\n---\n/m, "")
 end
 
+RETIRED_LEDGER_PATTERN = /\n(## 三、不採用・廃語台帳\n.*?)\n---\n\n(?=## 四、)/m
+
 def prepare_for_rag(relative, text)
   prepared = strip_frontmatter(text)
   return prepared unless relative == "canon/glossary.md"
 
-  prepared.sub(
-    /\n## 三、不採用・廃語台帳\n.*?\n---\n\n(?=## 四、)/m,
-    "\n"
-  )
+  prepared.sub(RETIRED_LEDGER_PATTERN, "\n")
+end
+
+# 廃語台帳は core pack に入れない(validate_rag_core が撤回語の混入を fail-closed で禁じている)。
+# 「現行の答えとして返さない」を保ったまま「撤回された事実には到達できる」を両立させるため、
+# 別スコープ generated/rag/retired/ へ出し、qmd では別コレクションとして索引する(2026-08-21)。
+def extract_retired_ledger(text)
+  match = strip_frontmatter(text).match(RETIRED_LEDGER_PATTERN)
+  match && match[1]
+end
+
+def write_retired_ledger!(source_text, source_sha)
+  ledger = extract_retired_ledger(source_text)
+  return nil unless ledger
+
+  dir = ROOT.join("generated/rag/retired")
+  dir.mkpath
+  target = dir.join("canon__glossary__retired-ledger.md")
+  metadata = <<~YAML
+    ---
+    generated: true
+    do_not_edit: true
+    rag_pack: harmonious-subjectivism-retired
+    rag_pack_version: #{PACK_VERSION}
+    authority: current_canon
+    status: retired_ledger
+    source_path: canon/glossary.md
+    source_sha256: #{source_sha}
+    transformation: retired_ledger_extracted
+    ---
+
+    > この文書は**撤回・不採用となった語の台帳**である。ここに載る語は現行の体系語ではない。
+    > 「その語は撤回されたか」への回答根拠であり、現行の定義として引用してはならない。
+
+  YAML
+  target.write(metadata + ledger + "\n", encoding: "UTF-8")
+  target
 end
 
 def transformation_for(relative)
@@ -144,6 +179,8 @@ entries = sources.map do |source|
 
   YAML
   target.write(metadata + rag_text, encoding: "UTF-8")
+
+  write_retired_ledger!(source_text, source_sha) if relative == "canon/glossary.md"
 
   {
     "file" => target.relative_path_from(ROOT).to_s,
