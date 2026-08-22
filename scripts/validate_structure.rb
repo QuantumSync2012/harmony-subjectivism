@@ -1,6 +1,12 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+# リポジトリパスは非ASCIIを含むため、filesystem encodingがUTF-8でないlocaleでは自分をUTF-8で再実行する
+if Encoding.find("filesystem") != Encoding::UTF_8 && !ENV["HS_VALIDATOR_UTF8_REEXEC"]
+  require "rbconfig"
+  exec({ "LC_ALL" => "en_US.UTF-8", "HS_VALIDATOR_UTF8_REEXEC" => "1" }, RbConfig.ruby, __FILE__, *ARGV)
+end
+
 require "pathname"
 require "set"
 require "uri"
@@ -90,7 +96,14 @@ errors << "pilot active set differs from registry active set" unless pilot.fetch
 errors << "pilot retired exclusion differs from registry retired set" unless pilot.fetch("excluded_from_pilot").sort == retired_ids
 
 anchor_locations = Hash.new { |hash, key| hash[key] = [] }
-source_markdown_files = Dir.glob(ROOT.join("**/*.md")).sort.reject do |file|
+# 監査値(link/anchor数)をcheckout間で再現可能にするため、git管理下ではtracked filesに固定する
+# (untracked・ignoredのmdが件数を揺らす)。.gitが無い展開先(git archive等)ではglobへフォールバック
+tracked_markdown =
+  if ROOT.join(".git").exist?
+    IO.popen(["git", "-C", ROOT.to_s, "ls-files", "-z", "--", "*.md"]) { |io| io.read }
+      .split("\0").map { |path| ROOT.join(path).to_s }
+  end
+source_markdown_files = (tracked_markdown || Dir.glob(ROOT.join("**/*.md"))).sort.reject do |file|
   Pathname.new(file).relative_path_from(ROOT).to_s.start_with?("generated/")
 end
 
