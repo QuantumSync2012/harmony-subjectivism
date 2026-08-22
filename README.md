@@ -1,4 +1,4 @@
-# 調和的主観主義（Harmonious Subjectivism）— 概念体系 v1.2.1
+# 調和的主観主義（Harmonious Subjectivism）— 概念体系 v1.2.0
 
 **Author**: Neo
 **Published by**: QuantumSync
