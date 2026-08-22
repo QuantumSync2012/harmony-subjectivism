@@ -1,4 +1,4 @@
-# 十箇条（普及版）— 調和的主観主義 v1.2.1
+# 十箇条（普及版）— 調和的主観主義 v1.2.2
 
 Author: Neo / Published by QuantumSync
 

@@ -1,4 +1,4 @@
-# 原理と定理 — 調和的主観主義 v1.2.1（正本）
+# 原理と定理 — 調和的主観主義 v1.2.2（正本）
 
 Version: v1.2.0 / Author: Neo / Published by QuantumSync
 

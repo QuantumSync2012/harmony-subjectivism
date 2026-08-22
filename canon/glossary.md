@@ -1,4 +1,4 @@
-# 用語集（Glossary）— 調和的主観主義 v1.2.1
+# 用語集（Glossary）— 調和的主観主義 v1.2.2
 
 版宣言: 本書は調和的主観主義 v1.2.0 の用語集である。
 Author: Neo / Published by QuantumSync
