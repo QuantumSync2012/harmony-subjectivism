@@ -79,6 +79,15 @@ def untracked_sources(source_relatives, tracked_set)
   source_relatives.reject { |relative| tracked_set.include?(relative) }
 end
 
+# release buildはclean HEAD限定(再CF残件・2026-08-22)。source以外のtracked変更
+# (generator・validator・登記外file含む)が1件でもあれば、生成物のcommit再現性が
+# 成立しないためfail-closedで拒否する。
+def tracked_dirty_guard_errors(dirty_list)
+  return [] if dirty_list.empty?
+
+  ["tracked working tree is dirty — commit or stash before release build: #{dirty_list.join(', ')}"]
+end
+
 def authority_for(relative)
   case relative
   when %r{\Acanon/}
@@ -462,10 +471,19 @@ def selftest!
     untracked = untracked_sources(%w[canon/glossary.md wiki/comparisons/new-page.md], Set.new(%w[canon/glossary.md]))
     failures << "case4: untracked source not detected" unless untracked == %w[wiki/comparisons/new-page.md]
     failures << "case4: tracked source misflagged" unless untracked_sources(%w[canon/glossary.md], Set.new(%w[canon/glossary.md])).empty?
+
+    # case 5: tracked dirty(generator変更を含む)はrelease buildを拒否(再CF残件)
+    errors = tracked_dirty_guard_errors(%w[scripts/build_rag_core.rb])
+    failures << "case5: dirty generator not refused" if errors.empty?
+    errors = tracked_dirty_guard_errors(%w[canon/glossary.md wiki/faq.md])
+    failures << "case5: dirty tracked sources not refused" if errors.empty?
+
+    # case 6: clean HEADは通す
+    failures << "case6: clean tree refused" unless tracked_dirty_guard_errors([]).empty?
   end
 
   if failures.empty?
-    puts "SELFTEST PASS: 4 case(s)"
+    puts "SELFTEST PASS: 6 case(s)"
     exit 0
   else
     warn "SELFTEST FAIL:"
@@ -477,6 +495,10 @@ end
 selftest! if ARGV.include?("--selftest")
 
 begin
+  # 0. clean HEAD gate: tracked変更が1件でもあればrelease buildを開始しない(fail-closed)
+  guard = tracked_dirty_guard_errors(HsRelease.dirty_paths)
+  raise guard.first unless guard.empty?
+
   # 1. 前提検査
   run_step!("canonical definition quote check",
             RbConfig.ruby, ROOT.join("scripts/sync_definition_quotes.rb").to_s, "--check")

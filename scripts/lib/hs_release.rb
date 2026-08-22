@@ -40,13 +40,14 @@ module HsRelease
     git("ls-files").split("\n").to_a
   end
 
-  # 指定path群に限定したworking treeの汚れ(未追跡を含む)。空配列なら全体のtracked変更のみを見る
+  # 指定path群に限定したworking treeの汚れ(未追跡を含む)。空配列なら全体のtracked変更のみを見る。
+  # 注: git()は全体をstripするため先頭行のstatus列幅が揺れる。固定offsetでなくstatus token除去でparseする
   def dirty_paths(paths = [])
     if paths.empty?
       git("status", "--porcelain", "--untracked-files=no")
     else
       git("status", "--porcelain", "--", *paths)
-    end.split("\n").map { |line| line[3..-1] }.compact
+    end.split("\n").map { |line| line.strip.sub(/\A\S{1,2}\s+/, "") }.reject(&:empty?)
   end
 
   def registry_sha256
