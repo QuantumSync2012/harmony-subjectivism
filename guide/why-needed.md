@@ -1,6 +1,6 @@
 # なぜこの体系が必要か（第0章・第1章）
 
-**調和的主観主義（Harmonious Subjectivism）v1.2.0**
+**調和的主観主義（Harmonious Subjectivism）v1.2.1**
 **Author**: Neo
 **Published by**: QuantumSync
 
