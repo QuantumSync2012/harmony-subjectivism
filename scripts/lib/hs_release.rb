@@ -31,13 +31,22 @@ module HsRelease
     commit
   end
 
-  # tracked変更の有無のみを見る(未追跡のgenerated/等はbuild生成物であり出自を汚さない)
-  def source_dirty?
-    !git("status", "--porcelain", "--untracked-files=no").empty?
-  end
-
   def release_id
     "hs-v#{registry_version}+#{source_commit[0, 7]}"
+  end
+
+  # HEADで追跡されているfileの集合(相対path)。untracked sourceのfail-closed判定に使う(CF NO-GO P1-3)
+  def tracked_files
+    git("ls-files").split("\n").to_a
+  end
+
+  # 指定path群に限定したworking treeの汚れ(未追跡を含む)。空配列なら全体のtracked変更のみを見る
+  def dirty_paths(paths = [])
+    if paths.empty?
+      git("status", "--porcelain", "--untracked-files=no")
+    else
+      git("status", "--porcelain", "--", *paths)
+    end.split("\n").map { |line| line[3..-1] }.compact
   end
 
   def registry_sha256

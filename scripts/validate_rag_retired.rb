@@ -12,6 +12,7 @@ require "json"
 require "pathname"
 require "tmpdir"
 require_relative "lib/hs_release"
+require_relative "lib/hs_provenance"
 
 # retired pack validator(統合修正仕様v1 §7・§9・§12):
 # - 台帳doc・lexicon・fixture・manifestが同一のcanon/glossary.md source SHA-256へ束縛されていること
@@ -70,11 +71,15 @@ def validate_retired(rag_root, glossary_path)
   doc_text = ledger_doc.read(encoding: "UTF-8")
 
   expected_version = HsRelease.registry_version
-  %w[schema_version release_id pack pack_version collection_name source_commit generator_sha256 registry_sha256 built_at word_count fixture_sha256 lexicon_sha256 files].each do |key|
+  %w[schema_version release_id pack pack_version collection_name authority status source_commit source_dirty generator_path generator_sha256 registry_sha256 built_at word_count fixture_sha256 lexicon_sha256 files].each do |key|
     errors << "retired manifest missing key: #{key}" unless manifest.key?(key)
   end
-  errors << "retired manifest pack_version must be #{expected_version}" unless manifest["pack_version"] == expected_version
+  errors << "retired manifest pack must be harmonious-subjectivism-retired" unless manifest["pack"] == "harmonious-subjectivism-retired"
+  errors << "retired manifest collection_name must be harmonious-subjectivism-retired" unless manifest["collection_name"] == "harmonious-subjectivism-retired"
+  errors << "retired manifest status must be retired_ledger" unless manifest["status"] == "retired_ledger"
   errors << "retired doc pack version mismatch" unless doc_text.include?("rag_pack_version: #{expected_version}")
+  # provenance実値照合(P1-4): current側と同じ束縛をretired manifestにも適用
+  errors.concat(HsProvenance.manifest_errors(manifest).map { |e| "retired #{e}" })
 
   # source束縛: doc・lexicon・fixture・manifest entriesがすべて現glossary SHAと一致(=鮮度保証)
   doc_sha_line = doc_text[/source_sha256: (\h{64})/, 1]
@@ -105,6 +110,17 @@ def validate_retired(rag_root, glossary_path)
   errors << "manifest word_count #{manifest['word_count']} != ledger rows #{rows}" unless manifest["word_count"] == rows
   fixture_words = fixture.fetch("cases", []).map { |c| c["word"] }.uniq
   errors << "fixture cases cover #{fixture_words.length} word(s), expected #{rows}" unless fixture_words.length == rows
+
+  # 各語に4意図が揃い、case idが一意で、scopeが許可値であること(CF coverage gap対応)
+  expected_intents = %w[explain_old is_current diff_from_current collision_mixed].sort
+  fixture.fetch("cases", []).group_by { |c| c["word"] }.each do |word, cases|
+    intents = cases.map { |c| c["intent"] }.sort
+    errors << "fixture word #{word} has intents #{intents.join(',')}, expected all of #{expected_intents.join(',')}" unless intents == expected_intents
+  end
+  ids = fixture.fetch("cases", []).map { |c| c["id"] }
+  errors << "fixture case ids must be present and unique" if ids.any?(&:nil?) || ids.length != ids.uniq.length
+  bad_scopes = fixture.fetch("cases", []).map { |c| c["expected_scope"] }.uniq - %w[retired current_priority]
+  errors << "fixture has invalid expected_scope value(s): #{bad_scopes.join(',')}" unless bad_scopes.empty?
 
   # 回答契約: status語(撤回/不採用/廃語)がfixtureのgateに宣言されていること
   errors << "fixture status_words must include 撤回/不採用/廃語" unless (%w[撤回 不採用 廃語] - fixture.fetch("status_words", [])).empty?
