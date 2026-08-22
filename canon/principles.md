@@ -1,6 +1,6 @@
 # 原理と定理 — 調和的主観主義 v1.2.2（正本）
 
-Version: v1.2.0 / Author: Neo / Published by QuantumSync
+Version: v1.2.2 / Author: Neo / Published by QuantumSync
 
 本体系は主観論ではなく**形成論**である——既存の概念語では表現できなかった問題を、独自の原初語彙と導出によって構成した、新しい形成論である。その哲学史上の固有性は、近接思想との本査読によってさらに明確にする。
 

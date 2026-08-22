@@ -6,7 +6,7 @@ registry_id: hs-id-registry
 registry_version: 1.2.2
 status: active
 created: 2026-08-14T15:35:00+0900
-updated: 2026-08-22T07:30:55+0900
+updated: 2026-08-22T17:31:11+0900
 owner_writer: repository maintainer
 validator: scripts/validate_structure.rb
 
