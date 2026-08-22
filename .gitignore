@@ -1,3 +1,4 @@
 .DS_Store
-generated/rag/core/
+# generated/はbuild専用の再生成可能な派生物(manifest+receiptがhashを保持する)。Git追跡しない
+generated/
 wiki/dialogues/

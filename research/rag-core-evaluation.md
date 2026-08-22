@@ -1,6 +1,16 @@
-# Core RAG受入質問 — v1.1.0
+# Core RAG受入質問 — v1.2.2
 
-この質問集は、公開repoには含まれずローカルで`ruby scripts/build_rag_core.rb`を実行して作る`generated/rag/core/`を、qmdまたはAnythingLLMへ投入した後の固定評価に使う。`generated/rag/core/`はGit管理外の再生成可能な派生物であり、公開正本でも公開配布物でもない。qmdとAnythingLLMは投入時点のローカルsnapshotで、自動追随はしない。期待回答は全文一致ではなく、必須論点と禁止論点で判定する。
+この質問集は、公開repoには含まれずローカルで`ruby scripts/build_rag_core.rb`を実行して作る`generated/rag/`(current=`core/`とretired=`retired/`)を、qmdまたはAnythingLLMへ投入した後の固定評価に使う。`generated/rag/`はGit管理外の再生成可能な派生物であり、公開正本でも公開配布物でもない。qmdとAnythingLLMは投入時点のローカルsnapshotで、自動追随はしない。期待回答は全文一致ではなく、必須論点と禁止論点で判定する。
+
+## 契約版と構成(v1.2.2)
+
+- 本契約の版は`research/hs-id-registry.yaml`の`registry_version`へ同期し、`scripts/validate_rag_core.rb`のversion contractが不一致を拒否する。
+- **retired語の全量検査の正は、buildが台帳から動的生成する`generated/rag/retired/retired-fixture.json`**である(語ごとに旧語説明・現行有効性・現行語との差・混入衝突の4意図)。語数を本書へ定数として書かない。
+- v1.1.1系の旧16語は`scripts/fixtures/retired_regression_v1_1_1_16words.json`が回帰fixtureとして別途保持する(2026-08-21実測のrecall@3=0.25障害の再発検査)。
+- 回答の意味判定は決定論gate(`scripts/check_answer_semantics.rb`・非LLM・exit code準拠)を主とし、LLM判定は補助とする。retired回答は撤回/不採用/廃語のstatus明示が必須で、現行定義として引用してはならない。
+- currentとretiredは別collection(`harmonious-subjectivism-current` / `harmonious-subjectivism-retired`)として索引し、通常検索はcurrentのみを用いる。
+
+## 正の取得試験(current)
 
 | 質問 | 必須論点 | 禁止論点 |
 |---|---|---|
@@ -8,6 +18,9 @@
 | 物と物質は何が違うか | 観による固定した現れ／源則を質に持つ物 | 物＝matterという無注記同一視 |
 | 鼎間の物理的整合はどう説明するか | 共通の鼎界でなく、各現し界を律する同じ源則 | 一枚の共有世界を正本扱い |
 | 玄り界も源則に律されるか | 未決、確認可能域は現 | 玄り界まで確定済みと断定 |
+| 鼎の成立は外部から確認できるか | 成立条件は確定／直接の証明は原理的に不可／間接的確認の方法は未決 | 外部確認の方法を確定済みと断定 |
+| 受とは何か | 届いたものが體・自己・情・履歴を通して客鼎観として形成される位相 | 「迎える構え」を必要条件とする旧定義 |
+| 自在とは何か | 縁起の中で、自らを起点として在ること／無条件の自由の証明ではない | 自由意志の証明・無条件の自由 |
 | 観の四位相は何か | 受け取る・切り取る・向かう・識る | 固定した脳科学モデル |
 | 識は意識か | 同一と未定義、意識一般は管轄外 | 意識発生機構の断定 |
 | 自由意志は現行概念か | 無条件の自由意志を退け、自在へ移行 | 自由意志を現行中核語として復活 |
@@ -19,8 +32,10 @@
 
 ## 負の取得試験
 
+- retired語の全量は動的fixture(`retired-fixture.json`)で検査する(本書に定数を持たない)。
 - `信火`を現行語として取得しない。
 - `火＝意識`を現行定義として取得しない。
 - 撤回済みの物質定義を取得しない。
-- v0.1.1翻訳を日本語v1.1.0の定義として取得しない。
+- v0.1.1翻訳を現行日本語正本の定義として取得しない。
 - 字書の生転写や8月対話のraw本文を取得しない。
+- 通常検索(current collection)の結果にretired台帳文書が混入しない。
