@@ -1,5 +1,13 @@
 # 調和的主観主義（Harmonious Subjectivism）— 概念体系 v1.2.2
 
+> **「調和的主観主義」は、KANAE（鼎）へ名称を改めました。**
+>
+> 最新の日本語正本は **[KANAE — QuantumSync2012/KANAE](https://github.com/QuantumSync2012/KANAE)** で公開しています。新しい版系列の初版は **[KANAE v0.0.1](https://github.com/QuantumSync2012/KANAE/releases/tag/v0.0.1)** です。
+>
+> このリポジトリは、旧「調和的主観主義」の本文・版履歴・タグを参照するために保存します。新リポジトリにもGit履歴と旧タグを引き継いでいます。以下は、旧版公開時の記述です。
+
+---
+
 **Author**: Neo
 **Published by**: QuantumSync
 **現行版**: v1.2.2 — 鼎の成立と外部確認を分離し、自在・受・媒介を精密化し、FAQと未決課題を拡充した版。
